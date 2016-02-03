@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='author' content='Nate Northway' />
+    <title>Docs | Streampost</title>
+    <!--Import Google Icon Font-->
+    <link href='http://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <!--Import Source Code Pro-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <!--Import materialize.css-->
+    <link type='text/css' rel='stylesheet' href='assets/css/materialize.min.css'  media='screen,projection'/>
+    <!--Import Custom CSS-->
+    <link type='text/css' rel='stylesheet' href='assets/css/custom.css' media='all' />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  </head>
+  <body class='grey lighten-5'>
+    <header>
+      <div class='navbar-fixed'>
+        <nav>
+          <div class='nav-wrapper blue-grey'>
+            <div class='container'>
+              <a href='#' class='brand-logo'>Streampost Docs</a>
+              <a href='#' data-activates='mob-nav' class='button-collapse'><i class='material-icons'>menu</i></a>
+              <ul class='right hide-on-med-and-down'>
+                <li><a href='index' class='active'>Back To Home<i class='material-icons small right'>home</i></a></li>
+              </ul>
+              <ul class='side-nav' id='mob-nav'>
+                <li><a href='index' class='active'>Back To Home<i class='material-icons small right'>home</i></a></li>                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class='container'>
+        <div class='row'>
+          <div class='col s12 m8'>
+            <div class='section scrollspy doc-sect' id='welcome'>
+              <h3>Welcome to Streampost</h3>
+              <p>
+                Streampost is a lightweight blogging platform designed for the user who wants
+                to blog without the 'riff-raff'. Complicated themes, templates, overwhelming file systems,
+                and too many 'features' that don't work for the blogger who just wants to write
+                are the reasons for the development of Streampost
+              </p>
+              <h4>What is Streampost?</h4>
+              <p>
+                Streampost is a PHP application that interacts with a MySQL database to deliver content
+                to an HTML document. The best way to think of Streampost is to imagine a runner that
+                gets content from one place and delivers it to another. The MySQL database houses the content
+                wrappers (header, footer, sidebar, and other meta content), posts, and user information. Streampost
+                retrieves that content and delivers it to the browser in HTML markup. Users can log in to the system
+                to take HTML content and deliver it to the database.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='getting-started'>
+              <h3>Getting Started</h3>
+              <p>
+                To get started with Streampost, you'll need a few things:<br>
+                <ul>
+                  <li>A Domain Name or Local Virtual Server</li>
+                  <li>A Server (or Local Virtual Server) with MySQL, PHP, the ability to edit and add databases, and CPanel access.</li>
+                  <li>A good understanding of how a website works</li>
+                  <li>A scratchpad to remember a few things when setting up Streampost</li>
+                </ul><br>
+                Once you have these things, setting up Streampost is a breeze!
+              </p>
+              <h4>Installing Streampost</h4>
+              <p>To install Streampost on your server, download the .zip file from <a href='#'>here</a>. After
+                downloading, sign into CPanel and select the directory where you want Streampost installed.
+                Remember this location, it will come in handy later. <br>
+                In CPanel, open File Manager and navigate to the directory you chose. Upload the .zip file by
+                pressing 'Upload' in the top menu. To unpack a file, click 'Extract' in the menu at the top of
+                the file manager screen. A new folder titled 'Streampost' should appear. Select the files in the
+                folder and move them up one level by double clicking the folder, pressing the 'Select All'
+                option, and clicking 'move'. In the dialog, select the parent directory where you want Streampost
+                to operate.
+              </p>
+              <h4>Creating the Database</h4>
+              <p>Since Streampost works on a database, a database, user, and password will need to be created.
+                To do this, in CPanel, navigate to the MySQL Database Wizard. Create a new database with
+                whatever name you like, but be sure to remember the name. Click 'next step'. Enter a username,
+                password, and confirm the password. Click 'next step'. Check 'all priveleges' on the next
+                page, then click 'next step'. You've created a database!
+              </p>
+              <h4>Running the Install Script</h4>
+              <p>The install script is the most crucial part of installing Streampost. To get started on the
+                final step, navigate to <a href='setup.html'>yourstreampostinstall.com/setup.html</a>. Fill out
+                the form with the correct information, click on 'Submit', and your Streampost blog is now
+                finished installing! Congratulations! But your posts are not populated, so all you'll see is
+                the 'Welcome' post and static items, such as the header, sidebar, and footer. To populate
+                your blog, check out <a href='#post'>Creating a Post</a>.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='setup-problems'>
+              <h3>Something isn't working</h3>
+              <p>If you're having trouble installing, make sure you're entering the correct information in the
+                following spots</p>
+              <h4>Your Domain URL:</h4>
+              <p>
+                The URL of your domain should not include 'http://'. While entering joesblog.com will work,
+                entering http://joesblog.com will not. <br>
+                Similarly, the <i>www.</i> is not necessary. When entering your blog URL, make sure to enter
+                the full url, including any subdirectories where your Streampost install exists. If you want
+                your blog hosted on joesblog.com in the subdirectory <i>blog</i>, the blog URL will be
+                joesblog.com/blog.
+              </p>
+              <h4>Host URL</h4>
+              <p>
+                Your Host URL will probably be localhost - if it's not, an error will occur when loading
+                'index.php' (the front page of your blog) that says 'Err: Host not resolved' or something
+                similar. If you recieve this error, log in to CPanel and look at the stats on the left hand side
+                of the page. Your host name should be listed there. Alternatively, call your hosting provider
+                to make sure you're entering the correct information.
+              </p>
+              <h4>Database Name, Username, and Password</h4>
+              <p>
+                Entering an incorrect database name will cause Streampost to fail. To obtain the full database
+                name, login to PHPMyAdmin then select the database you want Streampost to work with. At the top
+                of the page, your full database name will be listed; and, will look something like
+                <i>'root_streampost'</i>.<br>
+                Similarly, the database username will be prefixed. The database's username will have the same
+                prefix, i.e. <i>'root_admin'</i>.
+                <br>The password must be entered exactly how it was entered when creating the database.
+                This is where the scratchpad comes in handy.</p>
+            </div>
+            <div class='section scrollspy doc-sect' id='control-center'>
+              <h3>Making a Post</h3>
+              <p>
+                So, you've completed your Streampost install and you're ready to start posting. Great!<br>
+                To start a post, you must first log-in. Go to your
+                <a href='admin/login.html' target='_blank'>Login</a> page to login, and you'll be brought to the
+                Control Center. Here, you can perform all of the administrative functions to your blog. <br>
+              </p>
+              <h4>Control Center Overview</h4>
+              <p>
+                The control center provides options to update and view posts, edit the sidebar, footer, title,
+                and contact email, and options for user administration. These options appear in the left sidebar
+                navigation menu on desktop, and in the expandable left navigation menu on mobile.
+              </p>
+              <ol>
+                <li><a href='#post'>Posting</a></li>
+                <li><a href='#cc-content'>Editing Static Content</a></li>
+                <li><a href='#cc-user-admin'>User Administration</a></li>
+              </ol>
+            </div>
+            <div class='section scrollspy doc-sect' id='post'>
+              <h3>Posts</h3>
+              <p>
+                A listing of your posts will appear on the front page of the control center with an option to
+                update the posts. Additionally, the post can be viewed by clicking the post title.
+              </p>
+              <h4>Creating a post</h4>
+              <p>
+                To create a new post, you have a few options. From the front page of the control center, click
+                'New Post' in the left navigation menu. This will bring up the 'new post' form. Additionally,
+                clicking 'post editor' in the left navigation menu will pull up a list of all posts with
+                options to update and delete each individual post. In the top right corner of the page is a
+                circle with a '+' in it. Clicking this button will bring you to the new post page. <br>
+                Once you've arrived at the new post page, a form with title and content fields appears. Fill
+                out the title and content, and press 'post' to confirm your post.
+              </p>
+              <h4>Post Preview</h4>
+              <p>
+                Post Preview allows the user to preview a post before saving it. This is useful when using
+                HTML in a post. It is important to know what a post preview does not save the post. To preview
+                a post, follow the above instructions, but instead of pressing 'post', press 'preview'. This will
+                open a new tab or window with your post's content. In the right sidebar, an option to submit the
+                post will appear. After changing the post content on the new post page, a new instance of the
+                post preview must be initiated and the changes won't apply to the previous preview.
+              </p>
+              <h4>Editing A Post</h4>
+              <p>
+                To edit a post, navigate to 'post editor' in the left navigation menu or click on 'update' in the
+                front page of the control center in the 'posts' section. This pulls up the same form as the 'new
+                post' page, but it is pre-filled with the post's content. From here, updating a post is the same
+                as creating a new post.
+              </p>
+              <h4>Deleting a Post</h4>
+              <p>
+                To delete a post, navigate to 'post editor' in the left navigation menu. Each post will appear
+                in the page and a button to delete the post appears on each post. Clicking the 'delete' button
+                will force a prompt to appear that asks the user to confirm the post deletion. If you select '
+                yes, I want to delete this post', you will be taken to a confirmation page. If no, the prompt will
+                disapppear and the post will not be deleted.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='html'>
+              <h3>HTML In Posts</h3>
+              <p>
+                Posts allow HTML markup. To create a header, wrap your header text in the &lt;h2&gt; &amp;
+                &lt;/h2&gt; tags, like this:<br>
+                <span class='code'>&lt;h2&gt;This is my header&lt;/h2&gt;</span><br>
+                This will output the following line:
+              </p>
+              <h2>This is my header</h2>
+              <p>
+                Paragraph tags are &lt;p&gt; &amp; &lt;/p&gt;. Paragraphs can format text. Wrapping words or
+                phrases in the &lt;i&gt; &amp; &lt;/i&gt; tags will make the text <i>italic</i>. Likewise,
+                &lt;strong&gt; &amp; &lt;/strong&gt; tags will make your text <strong>bold</strong>.<br>
+                Images can be embedded by using the &lt;img /&gt; tags. Image tags have certain <i>attributes</i>,
+                which include, at a minimum, a 'src' and 'alt'. Width and Height are also appropriate sometimes.
+                The 'src' attribute defines the location of the image to be embedded, or the URL of an image.
+                The 'alt' attribute defines the descriptive text that accompanies the image that appears when a
+                user hovers over an image. The width and height do exactly what they sound like: width defines
+                the image's width and height defines the images height. An embedded image would look like this:
+                <br>
+                <span class='code'>&lt;img src='https://g.twimg.com/Twitter_logo_blue.png' alt='Follow me on Twitter!' width='50px' height='50px'/&gt;</span>
+                <br>
+                Anchor tags are also available for use, which most people know as <i>hyperlinks</i> or just
+                <i>links</i>. Text can be wrapped in an anchor tag with the &lt;a&gt; &amp; &lt;/a&gt; tags.
+                Anchor tags have two major attributes: the <i>href</i> and <i>target</i>. The href is the URL
+                being linked to. The target attribute defines where to load the link. For Streampost, all you need
+                to know is that setting the target to _blank will open it in a new tab. This is what an anchor tag
+                looks like:<br>
+                <span class='code'>&lt;a href='https://example.com' target='_blank'&gt;Example!&lt;/a&gt;</span>
+                This will output: <a href='https://example.com' target='_blank'>Example!</a><br>
+                Combining tags might be a good idea. For example: to link to a photographer's page, wrap one of
+                their images in an anchor tag with the href set to their URL. When that image is clicked, the
+                user will be taken to their website.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='cc-content'>
+              <h3>Editing Content</h3>
+              <p>
+                To edit your site content, login to the Control Center and you'll see right on the landing
+                screen the ability to edit the Blog Title and Contact Email. Editing the content inside and
+                pressing 'submit' will update that value. To edit the sidebar, click 'sidebar editor' in the
+                left navigation menu. The screen that appears will contain a form to update your sidebar content.
+                To edit the footer, click 'footer editor' in the left navigation menu. The screen that appears
+                will contain a form to update your footer content. These two forms are similar to the post
+                editor.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='cc-user-admin'>
+              <h3>Logging In and Out</h3>
+              <p>
+                Logging in to Streampost allows a user control center access. To login, go to the
+                <a href='admin/login.html' target='_blank'>Login</a> page and enter your username and password.
+                Click 'Login' to access your control center, and you're all set to go!
+              </p>
+              <h4>Logging Out</h4>
+              <p>
+                To log out, click the button in the top-right corner of any page. This will end the current
+                session and return you to the blog's homepage.
+              </p>
+              <h4>Sessions</h4>
+              <p>
+                Sessions will last as long as 1 hour. After this point, you will have to login again.<br>
+                This feature exists for security purposes and can not be disabled or edited, unless you're
+                a programmer and know how to change these things, but we suggest you don't.
+              </p>
+              <h4>Forgotten Password</h4>
+              <p>
+                If you forget your password or username, click the 'Forgot Credentials' on the login page.
+                You will be asked to fill out a form with, and, if Streampost has your username or email on
+                file, you will be emailed a password reset link. This link is a single-use, limited-time link,
+                and must be completed within 10 minutes to ensure a successful password reset. Again, this
+                practice exists for security purposes and can not be disabled or edited, unless you're a programmer
+                and know how to change these things, but, again, we suggest you don't.
+              </p>
+              <h4>User Administration</h4>
+              <p>
+                Streampost allows multiple users. To add a user, navigate to 'user administration' in the left
+                navigation menu. A page with a listing of all users will appear, with an option to edit each
+                user. In the top right corner, a round button with a '+' inside will appear. Clicking this
+                button will bring you to the new user form. Completing the form will add in a user and email
+                the entered email address with their information. <br>
+                To delete or edit a user, navigate to 'user administration' in the left navigation menu. A page with
+                a listing of all users will appear, with an option to edit each user. Click on the 'edit' button
+                to bring up the user-edit form. Modifying any field here will change the information, and clicking
+                'delete' will delete the user.
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='your-data'>
+              <h3>Your Data</h3>
+              <p>
+                We like to believe that we do a good job securing things; however, new exploits are discovered
+                daily and no web based application such as Streampost is ever 100% secure. Because of this,
+                we encourage three easy practices to ensure data protection:<br>
+                <ul>
+                  <li>Don't give away your password</li>
+                  <li>Select a secure password - good ones have at least 8 characters, with upppercase and lowercase letters, numbers, and symbols (!,@,#,$,%,^,&amp;,*,(,))</li>
+                  <li>Logout when you're done</li>
+                </ul>
+              </p>
+            </div>
+            <div class='section scrollspy doc-sect' id='help'>
+              <h3>Help</h3>
+              <p>
+                If you have taken the time to read the Docs and still find yourself with an issue, feel free to
+                Tweet at <a href='http://twitter.com/the_Northway'>@the_Northway</a>, or
+                email <a href='mailto:nate@natenorthway.com'>nate@natenorthway.com</a>
+              </p>
+            </div>
+          </div>
+          <div class='col hide-on-small-only m3 offset-m1'>
+            <ul class='section table-of-contents pinned'>
+              <li>Table of Contents</li>
+              <li><a href='#welcome'>Welcome</a></li>
+              <li><a href='#getting-started'>Getting Started</a></li>
+              <li><a href='#setup-problems'>Setup Problems</a></li>
+              <li><a href='#control-center'>Control Center</a></li>
+              <li><a href='#post'>Creating a Post</a></li>
+              <li><a href='#html'>HTML In Posts</a></li>
+              <li><a href='#cc-content'>Editing Content</a></li>
+              <li><a href='#cc-user-admin'>User Administration</a></li>
+              <li><a href='#logging-in'>Logging in and out</a></li>
+              <li><a href='#your-data'>Your Data</a></li>
+              <li><a href='#help'>Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class='page-footer blue-grey lighten-3'>
+      <div class='container'>
+        <div class='col s12'>
+          <p>Got more questions? <a href='mailto:nate@natenorthway.com'>Email me!</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='assets/js/materialize.min.js'></script>
+    <!--Import custom JS-->
+    <script type='text/javascript' src='assets/js/custom.js'></script>
+  </body>
+</html>

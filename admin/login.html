@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='author' content='Nate Northway' />
+    <title>Log In | Streampost</title>
+    <!--Import Google Icon Font-->
+    <link href='http://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <!--Import materialize.css-->
+    <link type='text/css' rel='stylesheet' href='../assets/css/materialize.min.css'  media='screen,projection'/>
+    <!--Import Custom CSS-->
+    <link type='text/css' rel='stylesheet' href='../assets/css/custom.css' media='all' />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class='nav-wrapper blue-grey'>
+          <div class='container'>
+            <a href='#' class='brand-logo'>Log In</a>
+            <ul class='hide-on-small-only right'>
+              <li><a href='../index'>Back To Home<i class='material-icons small right'>home</i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class='container'>
+        <div class='row'>
+          <div class='error-message col s12 m6 offset-m3 deep-orange' id='timeout'>
+            <h4>The link you followed has timed out.</h4>
+            <p>To reset your password, click <a href='users/reset?f=password' class='black-text'>here</p>.
+          </div>
+          <div class='error-message col s12 m6 offset-m3 green' id='resetsuccess'>
+            <h4>Your reset was successful. Login below</h4>
+          </div>
+          <div class='error-message col s12 m6 offset-m3 deep-orange' id='login_error'>
+            <h4>There was an error processing your request. Please try again.</h4>
+            <p>If this problem persists, try <a href='mailto:nndesignmke@gmail.com' class='black-text'>Emailing Us</a></p>
+          </div>
+          <div class='error-message col s12 m6 offset-m3 deep-orange' id='wrong_user'>
+            <h4>The username entered is invalid</h4>
+            <p>Did you forget your username? <a href='users/reset?f=username' class='black-text'>Reset it here</a></p>
+          </div>
+          <div class='error-message col s12 m6 offset-m3 deep-orange' id='wrong_pass'>
+            <h4>The password entered is invalid</h4>
+            <p>Did you forget your password? <a href='users/reset?f=password' class='black-text'>Reset it here</a></p>
+          </div>
+          <div class='error-message col s12 m6 offset-m3 deep-orange' id='logged_out'>
+            <h4>You have been logged out</h4>
+            <p>Click <a href='../index' class='black-text'>Here to go to the home page</a></p>
+          </div>
+        </div>
+        <div class='row'>
+          <form action='sessions/login.php' method='post'>
+            <div class='col s12 m6 offset-m3'>
+              <div class='input-field'>
+                <input type='text' name='user' id='user' placeholder='username' />
+                <label for='user'>Username</label>
+              </div>
+              <div class='input-field'>
+                <input type='password' name='pass' id='pass' placeholder='********' />
+                <label for='pass'>Password</label>
+              </div>
+              <button name='submit' type='submit' value='submit' class='btn waves-effect waves-light'>Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class='row hide-on-med-and-up'>
+            <a href='../index'>
+              <button class='btn waves-effect waves-light'>
+                Back to Home<i class='material-icons small right'>home</i>
+              </button>
+            </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class='page-footer blue-grey lighten-3'>
+      <div class='container'>
+        <div class='col s12'>
+          <p><a href='../docs.html'>Need Help?</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='../assets/js/materialize.min.js'></script>
+    <!--Import custom JS-->
+    <script type='text/javascript' src='../assets/js/custom.js'></script>
+  </body>
+</html>
