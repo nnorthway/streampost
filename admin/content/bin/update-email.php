@@ -15,7 +15,7 @@ if ($content = '') {
 }
 
 $fill = "UPDATE `content` SET `email` = '" . $emailcontent . "' WHERE `id` = " . $id;
-if(!mysqli_query($connect1, $fill) === true) {
+if(!mysqli_query($connect, $fill) === true) {
    die(mysqli_error());
  } else {
    header('Location: ../../index#success');
